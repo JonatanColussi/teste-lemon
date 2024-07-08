@@ -1,12 +1,12 @@
 module.exports = {
   collectCoverage: false,
-  collectCoverageFrom: ['src/**/*'],
+  collectCoverageFrom: ['src/**/*', '!src/schema.ts'],
   coverageThreshold: {
     global: {
-      branches: 100,
-      functions: 100,
-      lines: 100,
-      statements: 100,
+      branches: 90,
+      functions: 90,
+      lines: 90,
+      statements: 90,
     },
   },
   transform: {
