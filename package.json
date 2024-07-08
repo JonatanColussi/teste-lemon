@@ -1,0 +1,56 @@
+{
+  "name": "teste-lemon",
+  "version": "0.1.0",
+  "description": "",
+  "author": "Jonatan Colussi <jonatancolussi81@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JonatanColussi/teste-lemon"
+  },
+  "bugs": {
+    "url": "https://github.com/JonatanColussi/teste-lemon/issues"
+  },
+  "homepage": "https://github.com/JonatanColussi/teste-lemon",
+  "devDependencies": {
+    "@colussi/eslint-config": "^2.1.10",
+    "@colussi/prettier-config": "^1.0.3",
+    "@colussi/tsconfig": "^2.0.0",
+    "@serverless/event-mocks": "^1.1.1",
+    "@serverless/typescript": "^3.38.0",
+    "@types/aws-lambda": "^8.10.140",
+    "@types/jest": "^29.5.12",
+    "@types/node": "^20.14.10",
+    "aws-lambda": "^1.0.7",
+    "husky": "^9.0.11",
+    "jest": "^29.7.0",
+    "jest-watch-typeahead": "^2.2.2",
+    "json-schema-to-ts": "^3.1.0",
+    "repo-tools": "^0.3.1",
+    "serverless": "^3.39.0",
+    "serverless-domain-manager": "^7.3.8",
+    "serverless-plugin-typescript": "^2.1.5",
+    "ts-jest": "^29.1.5",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.3"
+  },
+  "scripts": {
+    "lint": "eslint --ext .js,.ts src test",
+    "prepare": "husky install",
+    "sls:deploy:dev": "sls deploy --stage dev",
+    "sls:validate": "sls print",
+    "test:coverage": "npm test -- --bail --coverage",
+    "test:watch": "npm test -- --watchAll --verbose",
+    "test": "jest",
+    "typecheck": "tsc --noEmit",
+    "validate": "npm run lint && npm run typecheck && npm run test:coverage",
+    "local-test-success": "sls invoke local -f eligibility --path mock/success.mock.json",
+    "local-test-error": "sls invoke local -f eligibility --path mock/error.mock.json"
+  },
+  "eslintConfig": {
+    "extends": "@colussi/eslint-config"
+  },
+  "prettier": "@colussi/prettier-config",
+  "dependencies": {
+    "typescript-json-schema": "^0.64.0"
+  }
+}

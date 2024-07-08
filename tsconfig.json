@@ -1,0 +1,9 @@
+{
+  "extends": "@colussi/tsconfig",
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "baseUrl": ".",
+    "skipLibCheck": true
+  },
+  "include": ["src/**/*", "serverless.ts", "test/**/*"]
+}
